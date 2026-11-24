@@ -19,12 +19,25 @@ const background = document.querySelector(".site-background");
 
 function updateBackgroundShade() {
   const scrollRange = document.documentElement.scrollHeight - window.innerHeight;
-  const progress = scrollRange > 0 ? Math.min(window.scrollY / scrollRange, 1) : 0;
+  const servers = document.querySelector("#servers");
+  const headerHeight = document.querySelector(".site-header")?.offsetHeight ?? 64;
+  const start = 0;
+  const end = servers ? servers.offsetTop - headerHeight : scrollRange * 0.45;
+  const rawTransition = end > start ? (window.scrollY - start) / (end - start) : 1;
+  const transition = Math.max(0, Math.min(rawTransition, 1));
+  const easedTransition = transition * transition * (3 - 2 * transition);
 
-  background.style.setProperty("--background-middle", (.22 + progress * .28).toFixed(2));
-  background.style.setProperty("--background-lower", (.58 + progress * .22).toFixed(2));
-  background.style.setProperty("--background-bottom", (.82 + progress * .12).toFixed(2));
-  background.style.opacity = (1 - progress * .9).toFixed(2);
+  background.style.setProperty("--background-blur", (easedTransition * 8).toFixed(2) + "px");
+  background.style.setProperty("--background-opacity", (easedTransition * .9).toFixed(3));
+
+  const mix = (to) => (255 + (to - 255) * easedTransition).toFixed(0);
+  const mutedMix = (to) => (238 + (to - 238) * easedTransition).toFixed(0);
+  const softMix = (to) => (221 + (to - 221) * easedTransition).toFixed(0);
+
+  document.documentElement.style.setProperty("--dynamic-text", `${mix(24)} ${mix(33)} ${mix(25)}`);
+  document.documentElement.style.setProperty("--dynamic-muted", `${mutedMix(66)} ${mutedMix(80)} ${mutedMix(71)}`);
+  document.documentElement.style.setProperty("--dynamic-soft", `${softMix(83)} ${softMix(97)} ${softMix(88)}`);
+  document.documentElement.style.setProperty("--text-shadow-alpha", (.42 * (1 - easedTransition)).toFixed(3));
 }
 
 window.addEventListener("scroll", updateBackgroundShade, { passive: true });
