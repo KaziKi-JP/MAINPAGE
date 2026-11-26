@@ -17,31 +17,68 @@
     <a class="brand" href="../index.html#top" aria-label="KKserver ホーム"><span></span>KKserver</a>
     <button class="menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false"><i></i><i></i></button>
     <nav class="main-nav" aria-label="メインナビゲーション">
-      <a href="../index.html#servers">サーバー</a>
-      <a href="../index.html#services">遊び方</a>
-      <a href="../index.html#timeline">タイムライン</a>
-      <a href="../index.html#admin">管理人</a>
+      <a href="#about">サーバー紹介</a>
+      <a href="#features">特徴</a>
+      <a href="#join">参加方法</a>
+      <a href="#rules">ルール</a>
     </nav>
     <a class="header-cta" href="../index.html#servers"><span class="chat-icon">←</span> サーバー一覧</a>
   </header>
   <main class="content-wrap service-detail">
     <div class="service-detail-breadcrumb"><a href="../index.html#top">KKservices</a> / サーバー紹介</div>
-    <div class="service-detail-copy">
+    <div class="service-detail-copy" id="about">
       <span class="section-kicker">SURVIVAL / MINECRAFT</span>
       <h1>KKserver</h1>
-      <span class="service-type">Minecraftサーバー</span>
-      <p>建築、サバイバル、交流を楽しめるKaziKi運営のMinecraftサーバーです。新しいプレイヤーにも参加しやすい環境を目指しています。</p>
-      <div class="service-detail-status"><span class="status-dot"></span>参加受付準備中</div>
+      <span class="service-type">Minecraft / 複合型マルチプレイサーバー</span>
+      <p>建築、サバイバル、交流を楽しめるKaziKi運営のMinecraftサーバーです。新しいプレイヤーが知り合いを見つけ、少しずつコミュニティへ参加できる環境づくりを目指しています。</p>
+      <div class="service-detail-status"><span class="status-dot is-offline"></span>開発中のためサーバー停止中</div>
       <dl class="service-detail-info">
         <div><dt>サーバーアドレス</dt><dd>mc.KKSV.f5.si</dd></div>
-        <div><dt>公開状況</dt><dd>参加受付準備中</dd></div>
+        <div><dt>公開状況</dt><dd>現在は利用停止中</dd></div>
         <div><dt>参加方法</dt><dd>ホワイトリスト制</dd></div>
       </dl>
       <div class="service-detail-actions">
-        <a class="primary-button" href="../index.html#servers">サーバー一覧へ <span>→</span></a>
-        <a class="text-link" href="../index.html#timeline">タイムラインを見る ↗</a>
+        <a class="primary-button" href="#join">参加方法を見る <span>→</span></a>
+        <a class="text-link" href="../index.html#timeline">運営状況を見る ↗</a>
       </div>
     </div>
+
+    <section class="service-detail-section" id="features" aria-labelledby="features-title">
+      <div class="section-heading">
+        <div><span class="section-kicker">01 / EXPERIENCE</span><h2 id="features-title">ここで楽しめること</h2></div>
+        <p>長く遊べるサバイバルを中心に、プレイヤー同士の交流や建築を大切にしています。</p>
+      </div>
+      <div class="kk-feature-grid">
+        <article><span>01</span><h3>サバイバルと建築</h3><p>資源集めや拠点づくりを、自分のペースで楽しめるワールド運営を目指します。</p></article>
+        <article><span>02</span><h3>プレイヤー交流</h3><p>マルチプレイならではの協力やコミュニケーションを、安心して行える場づくりを重視します。</p></article>
+        <article><span>03</span><h3>安全な運営</h3><p>荒らし対策や参加ルールを整え、初めて参加する人にも環境をわかりやすくします。</p></article>
+      </div>
+    </section>
+
+    <section class="service-detail-section" id="join" aria-labelledby="join-title">
+      <div class="section-heading">
+        <div><span class="section-kicker">02 / JOIN</span><h2 id="join-title">参加方法</h2></div>
+        <p>サーバーはホワイトリスト制です。運営開始後は以下の手順で参加できます。</p>
+      </div>
+      <ol class="kk-join-list">
+        <li><span>01</span><div><h3>サーバー情報を確認する</h3><p>アドレスは <strong>mc.KKSV.f5.si</strong> です。サーバーが停止中の場合は、公開までお待ちください。</p></div></li>
+        <li><span>02</span><div><h3>参加申請を行う</h3><p>運営が案内するホワイトリスト申請方法に従って、プレイヤー名を登録します。</p></div></li>
+        <li><span>03</span><div><h3>Minecraftから接続する</h3><p>認証完了後、サーバーアドレスをマルチプレイに登録して接続します。</p></div></li>
+      </ol>
+    </section>
+
+    <section class="service-detail-section" id="rules" aria-labelledby="rules-title">
+      <div class="section-heading">
+        <div><span class="section-kicker">03 / RULES</span><h2 id="rules-title">運営ルール</h2></div>
+        <p>みんなが気持ちよく遊ぶための、最低限のルールです。</p>
+      </div>
+      <div class="kk-rules">
+        <p><span>01</span>他のプレイヤーへの迷惑行為や、建築物・アイテムの無断破壊をしない</p>
+        <p><span>02</span>チート、不正ツール、サーバーへの悪影響となる行為をしない</p>
+        <p><span>03</span>差別的・攻撃的な発言や、コミュニティを不快にする行動をしない</p>
+        <p><span>04</span>運営からの案内やルールに従い、安全で楽しいプレイを心がける</p>
+      </div>
+    </section>
   </main>
   <footer class="site-footer">
     <div class="footer-bottom content-wrap"><span>© 2026 KKserver · SINCE 2025</span><span>Minecraft は Mojang Studios の商標です。本サーバー群は Mojang および Microsoft とは関係ありません。</span><a href="../index.html#top">トップへ</a></div>
