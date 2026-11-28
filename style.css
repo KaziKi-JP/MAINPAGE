@@ -445,6 +445,10 @@ h1 {
   font-weight: 600;
 }
 
+.server-status.is-offline {
+  color: var(--muted);
+}
+
 .server-row > p,
 .timeline-row > p {
   max-width: 760px;
@@ -930,6 +934,19 @@ h1 {
   border-color: var(--accent);
 }
 
+.social-pills .profile-pill {
+  color: #ffffff;
+  background: var(--accent);
+  border-color: var(--accent);
+  font-weight: 700;
+}
+
+.social-pills .profile-pill:hover {
+  color: #ffffff;
+  background: #3b9665;
+  border-color: #3b9665;
+}
+
 /* ==================================================
    フッター
    ================================================== */
@@ -1261,3 +1278,4 @@ h1 {
     animation-duration: 0.01ms !important;
   }
 }
+

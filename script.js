@@ -24,20 +24,19 @@ function updateBackgroundShade() {
   const start = 0;
   const end = servers ? servers.offsetTop - headerHeight : scrollRange * 0.45;
   const rawTransition = end > start ? (window.scrollY - start) / (end - start) : 1;
-  const transition = Math.max(0, Math.min(rawTransition, 1));
-  const easedTransition = transition * transition * (3 - 2 * transition);
+  const transition = rawTransition >= 0.5 ? 1 : 0;
 
-  background.style.setProperty("--background-blur", (easedTransition * 8).toFixed(2) + "px");
-  background.style.setProperty("--background-opacity", (easedTransition * .9).toFixed(3));
+  background.style.setProperty("--background-blur", (transition * 8).toFixed(2) + "px");
+  background.style.setProperty("--background-opacity", (transition * .9).toFixed(3));
 
-  const mix = (to) => (255 + (to - 255) * easedTransition).toFixed(0);
-  const mutedMix = (to) => (238 + (to - 238) * easedTransition).toFixed(0);
-  const softMix = (to) => (221 + (to - 221) * easedTransition).toFixed(0);
+  const mix = (to) => (255 + (to - 255) * transition).toFixed(0);
+  const mutedMix = (to) => (238 + (to - 238) * transition).toFixed(0);
+  const softMix = (to) => (221 + (to - 221) * transition).toFixed(0);
 
   document.documentElement.style.setProperty("--dynamic-text", `${mix(24)} ${mix(33)} ${mix(25)}`);
   document.documentElement.style.setProperty("--dynamic-muted", `${mutedMix(66)} ${mutedMix(80)} ${mutedMix(71)}`);
   document.documentElement.style.setProperty("--dynamic-soft", `${softMix(83)} ${softMix(97)} ${softMix(88)}`);
-  document.documentElement.style.setProperty("--text-shadow-alpha", (.42 * (1 - easedTransition)).toFixed(3));
+  document.documentElement.style.setProperty("--text-shadow-alpha", (.42 * (1 - transition)).toFixed(3));
 }
 
 window.addEventListener("scroll", updateBackgroundShade, { passive: true });
